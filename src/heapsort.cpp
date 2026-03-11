@@ -1,17 +1,36 @@
 #include <cstdlib> // Para usar srand y rand
 #include <chrono>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void HeapSort(int *v, int n){
-   
+void ajuste(int* arr, int tam, int i) {
+   int mayor = i;
+   int left = 2 * i + 1;
+   int right = 2 * i + 2;
 
+   if (left < tam && arr[left] > arr[mayor])
+      mayor = left;
 
+   if (right < tam && arr[right] > arr[mayor])
+      mayor = right;
 
+   if (mayor != i){
+      std::swap(arr[i], arr[mayor]);
+      ajuste(arr, tam, mayor);
+   }
+}
 
+void HeapSort(int* arr, int n) {
+   for (int i = n / 2 - 1; i >= 0; i--) {
+      ajuste(arr, n, i);
+   }
 
-
+   for (int i = n - 1; i > 0; i--) {
+      std::swap(arr[0], arr[i]);
+      ajuste(arr, i, 0);
+   }
 }
 
 int main(int argc, char *argv[]) {
