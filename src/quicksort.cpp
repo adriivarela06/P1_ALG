@@ -5,24 +5,24 @@
 using namespace std;
 
 int particion(int T[], int inicial, int final) {
-    int pivote = T[final]; 
-    int i = inicial - 1;
-    for (int j = inicial; j < final; ++j) {
-        if (T[j] <= pivote) {
-            i++;
-            swap(T[i], T[j]);
-        }
-    }
-    swap(T[i + 1], T[final]);
-    return i + 1;
+   int pivote = T[final]; 
+   int i = inicial - 1;
+   for (int j = inicial; j < final; ++j) {
+      if (T[j] <= pivote) {
+         i++;
+         swap(T[i], T[j]);
+      }
+   }
+   swap(T[i + 1], T[final]);
+   return i + 1;
 }
  
 void quicksort(int T[], int inicial, int final) {
-    if (inicial < final) {
-        int pos = particion(T, inicial, final);
-        quicksort(T, inicial, pos - 1);
-        quicksort(T, pos + 1, final);
-    }
+   if (inicial < final) {
+      int pos = particion(T, inicial, final);
+      quicksort(T, inicial, pos - 1);
+      quicksort(T, pos + 1, final);
+   }
 }
 
 
