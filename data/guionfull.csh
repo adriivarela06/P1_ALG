@@ -2,7 +2,7 @@
 
 # --- GRUPO 1: ALGORITMOS O(n^2) ---
 # Insercion, Seleccion, Burbuja, Shellsort
-foreach ejecutable (insercion seleccion burbuja shellsort)
+foreach ejecutable (insercion seleccion burbuja shellsort quicksortPeorcaso)
     set salida = "${ejecutable}.dat"
     echo "Ejecutando $ejecutable..."
     @ i = 8000
