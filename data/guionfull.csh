@@ -7,7 +7,7 @@ foreach ejecutable (insercion seleccion burbuja shellsort quicksortPeorcaso)
     echo "Ejecutando $ejecutable..."
     @ i = 8000
     while ($i <= 200000)
-        ./$ejecutable 42 $i >> $salida
+        ./../bin/$ejecutable 42 $i >> $salida
         @ i += 8000
     end
 end
@@ -19,7 +19,7 @@ foreach ejecutable (mergesort heapsort quicksort)
     echo "Ejecutando $ejecutable..."
     @ i = 500000
     while ($i <= 5000000)
-        ./$ejecutable 42 $i >> $salida
+        ./../bin/$ejecutable 42 $i >> $salida
         @ i += 100000
     end
 end
@@ -31,7 +31,7 @@ set salida = "fibonacci.dat"
 echo "Ejecutando $ejecutable..."
 @ i = 10
 while ($i <= 35)
-    ./$ejecutable 42 $i >> $salida
+    ./../bin/$ejecutable 42 $i >> $salida
     @ i += 1
 end
 
@@ -41,7 +41,7 @@ set salida = "hanoi.dat"
 echo "Ejecutando $ejecutable..."
 @ i = 3
 while ($i <= 33)
-    ./$ejecutable 42 $i >> $salida
+    ./../bin/$ejecutable 42 $i >> $salida
     @ i += 1
 end
 
