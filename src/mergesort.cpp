@@ -7,43 +7,43 @@ using namespace std;
 
 void fusionaMS(int *v, int posIni, int centro, int posFin, int *vaux) {
 
-    int i= posIni;
-    int j= centro;
-    int k= 0;
+   int i= posIni;
+   int j= centro;
+   int k= 0;
 
-    while (i<centro && j<=posFin) {
-        if (v[i]<=v[j]) {
-            vaux[k]= v[i];
-            i++;
-        } else {
-            vaux[k]= v[j];
-            j++;
-        }
-        k++;
-    }
+   while (i<centro && j<=posFin) {
+      if (v[i]<=v[j]) {
+         vaux[k]= v[i];
+         i++;
+      } else {
+         vaux[k]= v[j];
+         j++;
+      }
+      k++;
+   }
 
-    while (i<centro) {
-        vaux[k]= v[i];
-        i++, k++;
-    }
-    while (j<=posFin) {
-        vaux[k]= v[j];
-        j++, k++;
-    }
+   while (i<centro) {
+      vaux[k]= v[i];
+      i++, k++;
+   }
+   while (j<=posFin) {
+      vaux[k]= v[j];
+      j++, k++;
+   }
 
-    memcpy(v+posIni, vaux, k*sizeof(int));
+   memcpy(v+posIni, vaux, k*sizeof(int));
 }
 
 
 void MergeSort(int *v, int posIni, int posFin, int *vaux) {
 
-    if (posIni>=posFin) return;
+   if (posIni>=posFin) return;
 
-    int centro= (posIni+posFin)/2;
+   int centro= (posIni+posFin)/2;
 
-    MergeSort(v, posIni, centro, vaux);
-    MergeSort(v, centro+1, posFin, vaux);
-    fusionaMS(v, posIni, centro+1, posFin, vaux);
+   MergeSort(v, posIni, centro, vaux);
+   MergeSort(v, centro+1, posFin, vaux);
+   fusionaMS(v, posIni, centro+1, posFin, vaux);
 }
 
 
