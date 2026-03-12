@@ -1,7 +1,6 @@
 #include <iostream>
 #include <chrono>
 #include <cstdlib>
-//liana//
 
 using namespace std;
 
