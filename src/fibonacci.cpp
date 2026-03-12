@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
 
     n = atoi(argv[1]);
     t0 = std::chrono::high_resolution_clock::now(); 
-    long long res = fibonacci(n); 
+    fibonacci(n); 
     tf = std::chrono::high_resolution_clock::now(); 
     duracion = std::chrono::duration_cast<std::chrono::duration<double>>(tf - t0);
     cout << n << " " << duracion.count() << endl;
