@@ -14,13 +14,12 @@ int main(int argc, char *argv[]) {
     std::chrono::high_resolution_clock::time_point t0, tf;
     std::chrono::duration<double> duracion;
 
-    if (argc != 3) {
-        cerr << "Uso: " << argv[0] << " semilla tam\n";
+    if (argc != 2) {
+        cerr << "Uso: " << argv[0] << " tam\n";
         return -1;
     }
 
-    unsigned long int semilla = atoi(argv[1]);
-    n = atoi(argv[2]);
+    n = atoi(argv[1]);
     t0 = std::chrono::high_resolution_clock::now(); 
     long long res = fibonacci(n); 
     tf = std::chrono::high_resolution_clock::now(); 
