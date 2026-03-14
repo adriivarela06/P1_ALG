@@ -3,7 +3,7 @@
 # Ruta donde se guardarán los resultados (misma carpeta que el script)
 set dir_datos = "."
 
-# --- GRUPO 1: ALGORITMOS O(n^2) ---
+/*# --- GRUPO 1: ALGORITMOS O(n^2) ---
 # Incluye Inserción, Selección, Burbuja, Shellsort y el Peor Caso de Quicksort [cite: 733, 736]
 foreach ejecutable (insercion seleccion burbuja shellsort quicksortPeorcaso)
     set salida = "${dir_datos}/${ejecutable}.dat"
@@ -38,14 +38,15 @@ foreach ejecutable (mergesort heapsort quicksort)
 end
 
 # --- GRUPO 3: EXPONENCIALES ---
-# Fibonacci: Rango de 10 a 35 [cite: 744, 746]
+# Fibonacci: Rango de 10 a 35
 set ejecutable = "fibonacci"
 set salida = "${dir_datos}/${ejecutable}.dat"
 echo "Ejecutando $ejecutable..."
 echo -n "" > $salida
 @ i = 10
 while ($i <= 35)
-    ../bin/$ejecutable 42 $i >> $salida
+    # Quitamos el "42" porque Fibonacci no usa semilla
+    ../bin/$ejecutable $i >> $salida
     @ i += 1
 end
 
