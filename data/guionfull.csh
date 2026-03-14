@@ -3,7 +3,7 @@
 # Ruta donde se guardarán los resultados (misma carpeta que el script)
 set dir_datos = "."
 
-/*# --- GRUPO 1: ALGORITMOS O(n^2) ---
+# --- GRUPO 1: ALGORITMOS O(n^2) ---
 # Incluye Inserción, Selección, Burbuja, Shellsort y el Peor Caso de Quicksort [cite: 733, 736]
 foreach ejecutable (insercion seleccion burbuja shellsort quicksortPeorcaso)
     set salida = "${dir_datos}/${ejecutable}.dat"
